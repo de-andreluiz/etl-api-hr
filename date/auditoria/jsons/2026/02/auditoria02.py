@@ -11,9 +11,9 @@ from datetime import datetime
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-url = "https://api.pontomais.com.br/external_api/v1/reports/audit"
+url = f"{os.environ['HR_API_BASE_URL'].rstrip('/')}/external_api/v1/reports/audit"
 headers = {
-    "access-token": os.getenv("PONTOMAIS_ACCESS_TOKEN"),
+    "access-token": os.getenv("HR_API_ACCESS_TOKEN"),
     "Content-Type": "application/json",
     "Accept-Encoding": "gzip"
 }

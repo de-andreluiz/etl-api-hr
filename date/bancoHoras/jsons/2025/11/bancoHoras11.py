@@ -20,9 +20,9 @@ def salvar_json(data, nome_arquivo):
         json.dump(data, f, ensure_ascii=False, indent=4)
     logging.info(f"Relatório salvo em: {output_file}")
 
-url = "https://api.pontomais.com.br/external_api/v1/reports/time_balances"
+url = f"{os.environ['HR_API_BASE_URL'].rstrip('/')}/external_api/v1/reports/time_balances"
 headers = {
-    "access-token": os.getenv("PONTOMAIS_ACCESS_TOKEN"),
+    "access-token": os.getenv("HR_API_ACCESS_TOKEN"),
     "Content-Type": "application/json",
     "Accept-Encoding": "gzip"
 }

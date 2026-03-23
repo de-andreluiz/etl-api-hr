@@ -15,9 +15,9 @@ OUTPUT_FILE = os.path.join(BASE_DIR, "falta04-06.json")
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-url = "https://api.pontomais.com.br/external_api/v1/reports/missing_days"
+url = f"{os.environ['HR_API_BASE_URL'].rstrip('/')}/external_api/v1/reports/missing_days"
 headers = {
-    "access-token": os.getenv("PONTOMAIS_ACCESS_TOKEN"),
+    "access-token": os.getenv("HR_API_ACCESS_TOKEN"),
     "Content-Type": "application/json"
 }
 body = {
